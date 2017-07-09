@@ -1,6 +1,6 @@
 {
-  "author": "Filip Skokan <panva.ip@gmail.com>",
-  "homepage": "https://github.com/panva/node-oidc-provider",
+  "author": "TBD-Filip Skokan <panva.ip@gmail.com>",
+  "homepage": "TBD-https://github.com/panva/node-oidc-provider",
   "dependencies": {
     "base64url": "^2.0.0",
     "buffer-equals-constant": "^1.0.0",
@@ -20,8 +20,11 @@
     "uuid": "^3.0.0",
     "valid-url": "^1.0.9"
   },
-  "description": "OpenID Provider (OP) implementation for Node.js OpenID Connect servers.",
+  "description": "OpenID Provider (OP) implementation for Node.js OpenID Connect servers. Transpiled for use with node v6.5.0 or higher (so also on AWS Lambda Node v6.10.2)",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.25.0",
+    "babel-preset-env": "^1.6.0",
     "chai": "^4.0.0",
     "eslint": "^3.0.0",
     "eslint-config-airbnb-base": "^11.0.0",
@@ -37,11 +40,11 @@
     "sinon": "^2.1.0",
     "supertest": "^3.0.0"
   },
-  "main": "lib/index.js",
-  "name": "oidc-provider",
-  "repository": "panva/node-oidc-provider",
+  "main": "distnode65/index.js",
+  "name": "oidc-provider-node65",
+  "repository": "TBD panva/node-oidc-provider",
   "engines": {
-    "node": ">=8.0.0"
+    "node": ">=6.5.0"
   },
   "license": "MIT",
   "keywords": [
@@ -69,11 +72,13 @@
     "test": "node ./test/run",
     "lint": "eslint lib example test",
     "lint-fix": "eslint lib example test --fix",
-    "heroku-postbuild": "npm install mongodb"
+    "heroku-postbuild": "npm install mongodb",
+    "build": "babel lib --out-dir distnode65",
+    "prepublish": "npm run build"
   },
   "version": "2.0.0",
   "files": [
-    "lib"
+    "distnode65"
   ],
   "nyc": {
     "reporter": [

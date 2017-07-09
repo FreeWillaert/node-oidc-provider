@@ -38,3 +38,6 @@ package-lock.json
 
 # TODOs
 TODO.md
+
+# Babel output in ES2015
+/distnode65/
