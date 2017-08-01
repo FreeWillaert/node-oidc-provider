@@ -2,7 +2,7 @@
 
 const Provider = require('../../lib');
 const Koa = require('koa');
-const http = require('http');
+// const http = require('http');
 const mount = require('koa-mount');
 const supertest = require('supertest');
 const upstreamParser = require('koa-body');
