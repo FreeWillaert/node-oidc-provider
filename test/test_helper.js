@@ -27,7 +27,7 @@ global.i = instance;
 const responses = {
   serverErrorBody: {
     error: 'server_error',
-    error_description: 'oops something went wrong',
+    error_description: 'unexpected server error',
   },
   tokenAuthSucceeded: {
     error: 'restricted_grant_type',
